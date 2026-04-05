@@ -1,0 +1,91 @@
+# Nord Dark Matplotlib Style
+# Based on the Nord color palette: https://www.nordtheme.com/
+#
+# Polar Night:  #2E3440  #3B4252  #434C5E  #4C566A
+# Snow Storm:   #D8DEE9  #E5E9F0  #ECEFF4
+# Frost:        #8FBCBB  #88C0D0  #81A1C1  #5E81AC
+# Aurora:       #BF616A  #D08770  #EBCB8B  #A3BE8C  #B48EAD
+
+# --- Figure & Axes backgrounds ---
+figure.facecolor:     2E3440   # Polar Night 1
+axes.facecolor:       2E3440   # Polar Night 1 (axes bg)
+axes.edgecolor:       4C566A   # Polar Night 4
+savefig.facecolor:    2E3440
+
+# --- Grid ---
+axes.grid:            True
+axes.axisbelow:       True     # grid below plot elements
+grid.color:           3B4252   # Polar Night 2
+grid.linewidth:       0.8
+grid.linestyle:       -
+
+# --- Spines ---
+axes.spines.top:      False
+axes.spines.right:    False
+axes.spines.left:     False
+axes.spines.bottom:   False
+
+# --- Ticks ---
+xtick.color:          4C566A   # Polar Night 4
+ytick.color:          4C566A
+xtick.labelcolor:     4C566A   # Polar Night 4
+ytick.labelcolor:     4C566A   # Polar Night 4
+xtick.direction:      out
+ytick.direction:      out
+xtick.major.size:     4
+ytick.major.size:     4
+xtick.minor.size:     2
+ytick.minor.size:     2
+
+# --- Labels & Title colors ---
+axes.labelcolor:      D8DEE9
+text.color:           D8DEE9
+
+# --- Typography ---
+# Tick labels: JetBrains Mono Light
+xtick.labelsize:      9
+ytick.labelsize:      9
+font.family:          JetBrains Mono
+font.weight:          300
+
+# Axis labels: Avenir LT Std
+axes.labelsize:       11
+axes.labelweight:     normal
+
+# Title: Norwester
+axes.titlesize:       14
+axes.titleweight:     normal
+
+# --- Color cycle ---
+# 1. Snow Storm darkest  #D8DEE9
+# 2. Frost Blue          #88C0D0
+# 3. Aurora red          #BF616A
+# 4. Aurora orange       #D08770
+# 5. Aurora yellow       #EBCB8B
+# 6. Aurora green        #A3BE8C
+# 7. Aurora purple       #B48EAD
+axes.prop_cycle: cycler('color', ['D8DEE9', '88C0D0', 'BF616A', 'D08770', 'EBCB8B', 'A3BE8C', 'B48EAD'])
+
+# --- Lines ---
+lines.linewidth:      1.8
+lines.solid_capstyle: round
+
+# --- Patch / fill ---
+patch.edgecolor:      3B4252
+patch.facecolor:      88C0D0
+
+# --- Legend ---
+legend.frameon:       True
+legend.framealpha:    0.60
+legend.facecolor:     2E3440
+legend.edgecolor:     4C566A
+legend.fontsize:      9
+
+# --- Colormap ---
+# 'nord' is registered at runtime by nord_cmap.py
+# Set image.cmap there; this line is a reminder of the intent.
+# image.cmap: nord
+
+# --- Figure size & DPI ---
+figure.figsize:       10, 6
+figure.dpi:           100

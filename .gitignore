@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.DS_Store
+/nord-dark-reference*.png
+/nord-dark-reference*.webp

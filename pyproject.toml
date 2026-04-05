@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nordmpl"
+version = "0.1.0"
+description = "Nord Dark colour theme for Matplotlib"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+    "matplotlib>=3.6",
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+include = ["nordmpl*"]
+
+[tool.setuptools.package-data]
+nordmpl = ["data/*"]
