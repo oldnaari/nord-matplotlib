@@ -59,6 +59,7 @@ def set() -> None:                          # noqa: A001
     global _hooked
 
     _fonts.register()
+    _fonts.register_math_font()
     _cmap.register()
     matplotlib.style.use(str(_STYLE_PATH))
     mpl.rcParams["image.cmap"] = "nord"

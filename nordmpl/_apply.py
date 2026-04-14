@@ -93,6 +93,17 @@ def apply(ax: matplotlib.axes.Axes, title: str | None = None) -> None:
     _apply_internal(ax)
 
     if title is not None:
+        import matplotlib as mpl
         from ._fonts import title_font
         from ._palette import SNOW_1
-        ax.set_title(title, fontproperties=title_font(), color=SNOW_1, pad=8)
+
+        # Ensure mathtext engine is active so $...$ substrings in the title
+        # are rendered by matplotlib's built-in mathtext (STIX/DejaVu) while
+        # the surrounding plain text uses Norwester via fontproperties.
+        # Restore the caller's setting afterwards — no global side effects.
+        _prev_usetex = mpl.rcParams['text.usetex']
+        mpl.rcParams['text.usetex'] = False
+        try:
+            ax.set_title(title, fontproperties=title_font(), color=SNOW_1, pad=8)
+        finally:
+            mpl.rcParams['text.usetex'] = _prev_usetex

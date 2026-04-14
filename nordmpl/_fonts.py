@@ -12,7 +12,10 @@ _FONT_FILES = [
     _DATA / "JetBrainsMonoLight.ttf",
 ]
 
+_MATH_FONT = _DATA / "NewCMMath-Regular.otf"
+
 _registered = False
+_math_registered = False
 
 
 def register():
@@ -23,6 +26,22 @@ def register():
     for path in _FONT_FILES:
         fm.fontManager.addfont(str(path))
     _registered = True
+
+
+def register_math_font():
+    """Register NewComputerModern Math and configure mathtext to use it (idempotent)."""
+    global _math_registered
+    if _math_registered:
+        return
+    import matplotlib as mpl
+    fm.fontManager.addfont(str(_MATH_FONT))
+    prop = fm.FontProperties(fname=str(_MATH_FONT))
+    font_name = prop.get_name()
+    mpl.rcParams["mathtext.fontset"] = "custom"
+    mpl.rcParams["mathtext.rm"] = font_name
+    mpl.rcParams["mathtext.it"] = font_name + ":italic"
+    mpl.rcParams["mathtext.bf"] = font_name + ":bold"
+    _math_registered = True
 
 
 def title_font(size=14) -> fm.FontProperties:
